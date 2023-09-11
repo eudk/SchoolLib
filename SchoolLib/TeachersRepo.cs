@@ -15,7 +15,7 @@ namespace SchoolLib
 
         public TeachersRepo()
         {
-            teachers.Add(new Teacher(nextId++, "John Doe", "Math", "Math teacher"));
+            teachers.Add(new Teacher{Id= nextId++, Name = "John Doe", Subject = "Math", Description = "Math teacher"});
             teachers.Add(new Teacher(nextId++, "Jane Doe", "English", "English teacher"));
             teachers.Add(new Teacher(nextId++, "Jack Doe", "Science", "Science teacher"));
         }
