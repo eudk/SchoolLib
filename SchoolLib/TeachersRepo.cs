@@ -9,12 +9,13 @@ namespace SchoolLib
     public class TeachersRepo
     {
         private int nextId = 1;
-        private List<Teacher> teachers = new ();
-        private List<string> Classes = new ();
+        private List<Teacher> teachers = new();
+        private List<string> Classes = new();
+
 
         public TeachersRepo()
         {
-            teachers.Add(new Teacher(nextId++,"John Doe", "Math", "Math teacher"));
+            teachers.Add(new Teacher(nextId++, "John Doe", "Math", "Math teacher"));
             teachers.Add(new Teacher(nextId++, "Jane Doe", "English", "English teacher"));
             teachers.Add(new Teacher(nextId++, "Jack Doe", "Science", "Science teacher"));
         }
@@ -29,7 +30,7 @@ namespace SchoolLib
         public Teacher Add(Teacher teacher) // add a new teacher to the list
         {
             teacher.ValidateName(teacher.Name);
-            teacher.Id= nextId++;
+            teacher.Id = nextId++;
             teachers.Add(teacher);
             return teacher;
         }
@@ -49,22 +50,28 @@ namespace SchoolLib
             {
                 throw new ArgumentException("Teacher not found");
             }
+
             teachers.Remove(teacher);
         }
 
 
 
 
-        public void Update(int id, Teacher teacher) // update a teacher in the list
+        public Teacher Update(int id, Teacher teacher) // update a teacher in the list
         {
             var existingTeacher = GetById(id);
+            Teacher newTeacher = new Teacher();
             if (existingTeacher == null)
             {
                 throw new ArgumentException("Teacher not found");
             }
+
             existingTeacher.Name = teacher.Name;
             existingTeacher.Subject = teacher.Subject;
             existingTeacher.Description = teacher.Description;
+
+            return existingTeacher;
         }
-    }
+    }  
 }
+

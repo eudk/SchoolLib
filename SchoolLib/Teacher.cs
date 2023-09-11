@@ -7,6 +7,9 @@
         public string Description { get; set; }
         public int Id { get; set; }
 
+        public Teacher()
+        {
+        }
         public Teacher(int id, string name, string subject, string description)
         {
             Name = name;
