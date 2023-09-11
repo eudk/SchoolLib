@@ -87,6 +87,8 @@ namespace SchoolLib.Tests
         {
             //arrange
             TeachersRepo c = new TeachersRepo();
+            //act
+            Teacher? teacher = c.GetById(2);
             //assert
             Assert.AreEqual(3, c.Get().Count);
             Assert.AreEqual(2, c.Get()[1].Id);
