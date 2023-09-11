@@ -78,7 +78,7 @@ namespace SchoolLib.Tests
             Assert.AreEqual("Janee Doe", c.Get()[1].Name);
             Assert.AreEqual("English", c.Get()[1].Subject);
             Assert.AreEqual("English teacher", c.Get()[1].Description);
-          //  Assert.ThrowsException<ArgumentException>(() => c.Update(422, new Teacher(4, "John Doe", "Math", "Math teacher")));
+           // Assert.ThrowsException<ArgumentException>(() => c.Update(422, teacher));
 
         }
 
@@ -95,7 +95,7 @@ namespace SchoolLib.Tests
             Assert.AreEqual("Jane Doe", c.Get()[1].Name);
             Assert.AreEqual("English", c.Get()[1].Subject);
             Assert.AreEqual("English teacher", c.Get()[1].Description);
-           // Assert.ThrowsException<ArgumentException>(() => c.GetById(4));
+           //Assert.ThrowsException<ArgumentException>(() => c.GetById(4,teacher));
         }
 
   
